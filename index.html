@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#e8f3ff" />
+  <meta name="description" content="Un pequeño regalo, lleno de grandes recuerdos." />
+  <title>Un regalo para ti ♡</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="floating-hearts" aria-hidden="true"></div>
+
+  <!-- PANTALLA 1: REGALO -->
+  <section id="introScreen" class="intro-screen screen" aria-label="Abrir regalo">
+    <div class="brand">Con<span>♥</span>Amor</div>
+    <div class="intro-card">
+      <span class="eyebrow">TIENES UN REGALO</span>
+      <span class="eyebrow small-gap">PARA</span>
+      <h1 id="introName">Ashly</h1>
+      <div class="short-rule"></div>
+      <p class="intro-from">De <span id="introFrom">Xander</span> <span class="heart-red">♥</span></p>
+      <p class="intro-quote">“Espero que te guste, mi amor. Lo hice con todo mi corazón, solo para ti.”</p>
+      <div class="intro-divider"></div> 
+      <p class="tap-hint">Toca el corazón para descubrir tu regalo</p>
+      <button id="openGift" class="heart-button" type="button" aria-label="Abrir el regalo">
+        <svg viewBox="0 0 120 110" role="img" aria-label="Corazón">
+          <path d="M60 99 C48 87 11 59 11 33 C11 12 36 7 49 19 L60 30 L71 19 C84 7 109 12 109 33 C109 59 72 87 60 99" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span class="heart-button-label">TOCA AQUÍ</span>
+      </button>
+    </div>
+    <small class="screen-footer">Hecho especialmente para ti ♡</small>
+  </section>
+
+  <!-- TRANSICIÓN -->
+  <section id="openingScreen" class="opening-screen screen" hidden>
+    <div class="tiny-heart">♥</div>
+    <p>Has abierto tu regalo <span class="heart-red">♥</span></p>
+  </section>
+
+  <!-- PÁGINA QUE APARECE AL ABRIR EL REGALO -->
+  <div id="experience" hidden>
+    <header class="site-header">
+      <a class="brand small-brand" href="#inicio" aria-label="Volver al inicio">Con<span>♥</span>Amor</a>
+      <a class="nav-heart" href="#sorpresa" aria-label="Ir a la sorpresa">♡</a>
+    </header>
+
+    <main>
+      <!-- PORTADA -->
+      <section id="inicio" class="hero">
+        <img id="heroPhoto" src="fotos/Foto6.jpg" alt="Nuestro recuerdo favorito" />
+        <div class="hero-vignette"></div>
+        <div class="hero-copy">
+          <span class="eyebrow light-label">PARA</span>
+          <h2 id="heroName">Ashly</h2>
+          <p>Escanea un recuerdo hecho con amor</p>
+          <span class="hero-date" id="heroDate">DE XANDER · 21 DE OCTUBRE DE 2025</span>
+        </div>
+        <a href="#cancion" class="scroll-cue" aria-label="Bajar para ver el regalo">↓</a>
+      </section>
+
+      <!-- CANCIÓN -->
+      <section id="cancion" class="section music-section">
+        <span class="eyebrow">NUESTRA CANCIÓN</span>
+        <div class="record-cover"><img id="albumCover" src="fotos/Foto4.jpg" alt="Portada de nuestra canción" /><span class="record-center">♫</span></div>
+        <h3>Una canción para mi amor</h3>
+        <span class="music-source">HECHA PARA NOSOTROS</span>
+        <div class="music-player">
+          <img id="musicThumbnail" src="fotos/Foto4.jpg" alt="" />
+          <div class="music-meta"><strong id="songTitle">Una canción que se volvio especial para mí</strong><span id="songArtist">Un recuerdo para siempre</span><small>♫ Nuestra playlist</small></div>
+          <button id="songToggle" type="button" class="player-play" aria-label="Reproducir música">▶</button>
+        </div>
+        <audio id="songAudio" preload="metadata"></audio>
+      </section>
+
+      <!-- GALERÍA -->
+      <section id="galeria" class="section gallery-section">
+        <span class="eyebrow">GALERÍA</span>
+        <h2 class="section-title">Momentos que no se borran</h2>
+        <div class="gallery-frame">
+          <img id="galleryImage" alt="Foto de nuestros recuerdos" src="fotos/Foto1.png" />
+          <span class="image-count" id="galleryCounter">1 / 14</span>
+        </div>
+        <div class="gallery-controls">
+          <button id="prevPhoto" type="button" aria-label="Foto anterior" class="gallery-arrow">‹</button>
+          <div id="galleryDots" class="gallery-dots" role="group" aria-label="Elegir foto"></div>
+          <button id="nextPhoto" type="button" aria-label="Foto siguiente" class="gallery-arrow">›</button>
+        </div>
+      </section>
+
+      <!-- CARTA -->
+      <section id="carta" class="section letter-section">
+        <span class="eyebrow">CARTA</span>
+        <article class="letter-paper">
+          <h2>Hola, mi amor:</h2>
+          <div id="letterText" class="letter-body"></div>
+          <p class="letter-signature">Con todo mi amor,<br /><span id="letterSignature">Xander</span> <span class="heart-red">♥</span></p>
+        </article>
+      </section>
+
+      <!-- LÍNEA DE TIEMPO -->
+      <section id="recuerdos" class="section timeline-section">
+        <span class="eyebrow">RECUERDOS</span>
+        <h2 class="section-title">Nuestra línea del tiempo</h2>
+        <div class="counter-block">
+          <strong id="daysCounter">0</strong>
+          <span>DÍAS JUNTOS</span>
+          <small id="countSince">desde el 21 de octubre de 2025</small>
+        </div>
+        <p class="location-label">⌖ Todo empezó con una historia</p>
+        <div class="timeline" id="timelineList"></div>
+      </section>
+
+      <!-- AUDIO / MENSAJE DE VOZ -->
+      <section id="voz" class="section voice-section">
+        <span class="eyebrow">MENSAJE DE VOZ</span>
+        <h2 class="section-title">Para que siempre me escuches</h2>
+        <div class="voice-card">
+          <div class="voice-card-top"><span class="voice-bubble">♥</span><div><strong>Mensaje de voz</strong><small id="voiceSender">De Xander</small></div></div>
+          <div class="voice-controls">
+            <button id="voiceToggle" type="button" class="voice-play" aria-label="Reproducir mensaje">▶</button>
+            <div class="voice-progress-area"><div id="waveform" class="waveform" aria-hidden="true"></div><div class="audio-track"><div class="audio-track-fill" id="voiceProgress"></div></div></div>
+            <span id="voiceDuration">0:00</span>
+          </div>
+        </div>
+        <audio id="voiceAudio" preload="metadata"></audio>
+      </section>
+
+
+      <!-- ÚNICA SECCIÓN NUEVA: UNA PROMESA DE ANIVERSARIO -->
+      <section id="promesa" class="section anniversary-section" aria-labelledby="anniversaryTitle">
+        <span class="eyebrow anniversary-eyebrow">SOLO PARA TI · NUESTRO ANIVERSARIO</span>
+        <h2 class="section-title anniversary-title" id="anniversaryTitle">Bajo el mismo cielo</h2>
+        <p class="anniversary-intro">Si pudiera pedirle algo al universo, sería volver a encontrarte en cada vida.</p>
+
+        <div class="night-sky" aria-hidden="true">
+          <span class="night-moon"></span>
+          <span class="sky-spark sky-spark-1">✦</span>
+          <span class="sky-spark sky-spark-2">✧</span>
+          <span class="sky-spark sky-spark-3">✦</span>
+          <span class="sky-spark sky-spark-4">✧</span>
+          <span class="night-quote">Tú eres mi lugar favorito<br>en todo el universo.</span>
+        </div>
+
+        <p class="envelope-instruction">Guardé unas palabras que son solo tuyas...</p>
+        <button id="openPromise" class="envelope-button" type="button"
+                aria-expanded="false" aria-controls="promiseLetter"
+                aria-label="Abrir mi promesa de aniversario">
+          <span class="envelope-shape" aria-hidden="true">
+            <span class="envelope-back"></span>
+            <span class="envelope-flap"></span>
+            <span class="envelope-front"></span>
+            <span class="envelope-seal">♥</span>
+          </span>
+          <span class="envelope-label">TOCA PARA ABRIR MI PROMESA</span>
+        </button>
+
+        <article class="promise-letter" id="promiseLetter" hidden>
+          <span class="eyebrow">MI PROMESA DE AMOR</span>
+          <h3>Siempre tú, mi amor.</h3>
+          <p id="promiseText"></p>
+          <div class="promise-signature">Con todo mi corazón,<br><span id="promiseFrom"></span> ♡</div>
+        </article>
+      </section>
+
+      <!-- FOTO FINAL -->
+      <section class="closing-photo">
+
+<img id="closingImage" src="fotos/Foto6.jpg" alt="Otro recuerdo especial" />
+
+        <div class="closing-caption"><span class="mini-heart">♥</span><h2>Escanea un recuerdo<br />hecho con amor</h2><p>Para <span id="closingName">Ashly</span>, con todo mi amor.</p><small id="closingFrom">— XANDER</small></div>
+      </section>
+
+      <!-- SORPRESA -->
+      <section id="sorpresa" class="section surprise-section">
+        <span class="mini-heart">♥</span>
+        <h2>UNA ÚLTIMA SORPRESA</h2>
+        <p>Pensabas que el regalo había terminado...<br />Pero todavía tengo algo preparado para ti.</p>
+        <button id="startQuiz" class="primary-button" type="button">Descubrir la sorpresa <span>♥</span></button>
+      </section>
+    </main>
+    <footer class="site-footer">Hecho con <span>♥</span> · Solo para nosotros</footer>
+  </div>
+
+  <!-- CUESTIONARIO FINAL -->
+  <div id="quizOverlay" class="quiz-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="quizTitle">
+    <div class="quiz-topbar"><button id="closeQuiz" type="button" class="quiz-close" aria-label="Cerrar cuestionario">✕</button><span class="brand small-brand">Con<span>♥</span>Cariño</span></div>
+    <div class="quiz-content" id="quizContent">
+      <p class="quiz-intro">Para descubrir mi última sorpresa tendrás que responder unas preguntas sobre nosotros.</p>
+      <div id="quizProgressDots" class="quiz-progress" aria-label="Progreso de las preguntas"></div>
+      <span id="quizQuestionNum" class="eyebrow">PREGUNTA 1 DE 3</span>
+      <h2 id="quizTitle" class="quiz-question">¿Dónde fue nuestro primer beso?</h2>
+      <div id="quizAnswers" class="quiz-answers"></div>
+      <p id="quizFeedback" class="quiz-feedback" role="status" aria-live="polite"></p>
+    </div>
+    <div id="quizCompleted" class="quiz-completed" hidden>
+      <div class="success-hearts">♥ ♡ ♥</div>
+      <h2>¡Lo has conseguido! <span>♥</span></h2>
+      <p id="successMessage">Cada recuerdo contigo es mi regalo favorito.</p>
+      <button id="backToPage" type="button" class="primary-button">Volver a nuestros recuerdos ♥</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
